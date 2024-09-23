@@ -37,9 +37,6 @@ public class User implements UserDetails {
     @Column(name = "total_spent_last_month")
     private double totalSpentLastMonth;
 
-    @Column(name = "last_purchase")
-    private LocalDate lastPurchase;
-
     @Column(name = "date_when_became_vip")
     private LocalDate dateWhenBecameVIP;
 

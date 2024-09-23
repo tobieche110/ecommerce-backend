@@ -18,7 +18,7 @@ public class SalesOrder {
     @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false)
     private User user;
 
-    @ElementCollection
+    @ElementCollection()
     @CollectionTable(name = "sales_order_products", schema = "public", catalog = "ecommerce", joinColumns = @JoinColumn(name = "sales_order_id"))
     private List<Long> productsId;
 

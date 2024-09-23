@@ -19,10 +19,10 @@ import java.util.function.Function;
 public class JwtTokenUtil {
 
     @Value("${jwt.secret}")
-    private String secret;
+    String secret;
 
     @Value("${jwt.expiration}")
-    private long expiration;
+    long expiration;
 
     private final UserRepository userRepository;
 
@@ -50,8 +50,9 @@ public class JwtTokenUtil {
         Map<String, Object> claims = new HashMap<>();
         // Traemos la información del usuario
         User user = userRepository.findByUsername(username).isPresent() ? userRepository.findByUsername(username).get() : null;
-        // Agregamos "role" al token
+        // Agregamos "role" y "id" al token
         claims.put("role", user.getRole());
+        claims.put("id", user.getId());
         System.out.println("Claims: " + claims);
         return doGenerateToken(claims, username);
     }
@@ -73,7 +74,7 @@ public class JwtTokenUtil {
         return (extractedUsername.equals(username) && !isTokenExpired(token));
     }
 
-    private Boolean isTokenExpired(String token) {
+    Boolean isTokenExpired(String token) {
         final Date expiration = getClaimFromToken(token, Claims::getExpiration);
         return expiration.before(new Date());
     }

@@ -48,7 +48,6 @@ public class UserService implements UserDetailsService {
         return userRepository.findByDateWhenLostVIPBetween(startOfMonth, endOfMonth);
     }
 
-
     // Este método es usado por JWTController para validar el token
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
