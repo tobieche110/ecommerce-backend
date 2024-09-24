@@ -26,17 +26,16 @@ Este proyecto es un ecommerce que permite a los usuarios agregar productos al ca
 2. **Archivos Necesarios**:
 Asegúrate de tener el archivo init.sql en la raíz del proyecto (este archivo contiene la estructura y algunos datos de prueba para la base de datos).
 **Levanta los servicios de Docker**: En la raíz del proyecto, ejecuta el siguiente comando para construir la aplicación y levantar los contenedores:
-> docker-compose up --build
+`docker-compose up --build`
 
-3. **Accede a la aplicación**:
+4. **Accede a la aplicación**:
 - La aplicación estará disponible en http://localhost:8080.
 - La base de datos PostgreSQL estará disponible en localhost:5432.
 
 4. **Detén los contenedores**: Cuando quieras detener la aplicación, usa:
-> docker-compose down
+`docker-compose down`
 
-**Nota*
-El contenedor de la base de datos cargará automáticamente el script init.sql, que inicializa la base de datos con algunos datos de ejemplo.
+> Nota: El contenedor de la base de datos cargará automáticamente el script init.sql, que inicializa la base de datos con algunos datos de ejemplo.
 
 ### Guía para Correr la Aplicación sin Docker
 ### Requisitos
@@ -48,9 +47,7 @@ El contenedor de la base de datos cargará automáticamente el script init.sql, 
 2. Configura la base de datos:
   - Crea una base de datos llamada ecommerce.
   - Crea un usuario postgres con la contraseña admin y otórgale permisos sobre la base de datos ecommerce.
-  - Importa el archivo init.sql en la base de datos para cargar la estructura y los datos:
-> psql -U postgres -d ecommerce -f path/to/init.sql
-
+  - Importa el archivo init.sql en la base de datos para cargar la estructura y los datos: `psql -U postgres -d ecommerce -f init.sql`
 3. Configura el archivo application.properties: Verifica que los detalles de la base de datos sean correctos en el archivo src/main/resources/application.properties:
 
 **properties**
@@ -60,12 +57,10 @@ spring.datasource.username=postgres
 spring.datasource.password=admin
 Compila el proyecto: Navega a la carpeta raíz del proyecto y ejecuta:
 ```
-
-> ./mvnw clean package -DskipTests
+`./mvnw clean package -DskipTests`
 
 4. Ejecuta la aplicación: Después de compilar, puedes ejecutar la aplicación:
-> java -jar target/ecommerce-0.0.1-SNAPSHOT.jar
-
+`java -jar target/ecommerce-0.0.1-SNAPSHOT.jar`
 5. Accede a la aplicación: La aplicación estará disponible en http://localhost:8080.
 ---
 ## Guía para correr la Aplicación Frontend
