@@ -38,12 +38,12 @@ Asegúrate de tener el archivo init.sql en la raíz del proyecto (este archivo c
 **Nota*
 El contenedor de la base de datos cargará automáticamente el script init.sql, que inicializa la base de datos con algunos datos de ejemplo.
 
-## Guía para Correr la Aplicación sin Docker
-# Requisitos
+### Guía para Correr la Aplicación sin Docker
+### Requisitos
 - Java 17: Asegúrate de tener el JDK 17 instalado. Puedes descargarlo desde Oracle.
 - PostgreSQL: Instalado y corriendo en tu máquina local. Puedes descargarlo desde PostgreSQL.
 - Maven: Instalado para gestionar las dependencias del proyecto.
-# Instrucciones
+### Instrucciones
 1. Dirigete a la carpeta "backend" del proyecto:
 2. Configura la base de datos:
   - Crea una base de datos llamada ecommerce.
@@ -67,6 +67,12 @@ Compila el proyecto: Navega a la carpeta raíz del proyecto y ejecuta:
 > java -jar target/ecommerce-0.0.1-SNAPSHOT.jar
 
 5. Accede a la aplicación: La aplicación estará disponible en http://localhost:8080.
+---
+## Guía para correr la Aplicación Frontend
+1. Dirigete a la carpeta "frontend" del proyecto.
+2. Ejecuta el comando `npm install` para descargar las dependencias del proyecto.
+3. Configura la variable de entorno para acceder al backend: `VITE_BACKEND_URL=http://localhost:8080`
+4. Ejecuta el comando `npm run dev` para iniciar el proyecto en http://localhost:5173/
 
 ## Datos de Prueba
 **Usuario Administrador**:
@@ -80,12 +86,6 @@ Compila el proyecto: Navega a la carpeta raíz del proyecto y ejecuta:
 **Usuario VIP**:
 - username: Vip
 - password: vip
----
-## Guía para correr la Aplicación Frontend
-1. Dirigete a la carpeta "frontend" del proyecto.
-2. Ejecuta el comando `npm install` para descargar las dependencias del proyecto.
-3. Configura la variable de entorno para acceder al backend: `VITE_BACKEND_URL=http://localhost:8080`
-4. Ejecuta el comando `npm run dev` para iniciar el proyecto en http://localhost:5173/
 
 ## Fases en el desarrollo de la aplicación
 ## 1. Análisis
