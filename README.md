@@ -11,17 +11,17 @@ Este proyecto es un ecommerce que permite a los usuarios agregar productos al ca
 - Maven
 - PostgreSQL (si no usas Docker)
 - Docker (si eliges usar contenedores)
-
+- **Node.js**: Asegúrate de tener Node.js instalado en tu sistema. Puedes descargarlo desde [Node.js](https://nodejs.org/).
 ---
 
-## Guía para Correr la Aplicación con Docker
+## Guía para Correr la Aplicación Backend con Docker
 
 ### Requisitos
 - Docker instalado en tu sistema. Puedes descargarlo desde [Docker](https://www.docker.com/get-started).
 
 ### Instrucciones
 
-1. **Clona el repositorio**:
+1. **Dirigete a la carpeta "backend" del proyecto**:
 
 2. **Archivos Necesarios**:
 Asegúrate de tener el archivo init.sql en la raíz del proyecto (este archivo contiene la estructura y algunos datos de prueba para la base de datos).
@@ -44,7 +44,7 @@ El contenedor de la base de datos cargará automáticamente el script init.sql, 
 - PostgreSQL: Instalado y corriendo en tu máquina local. Puedes descargarlo desde PostgreSQL.
 - Maven: Instalado para gestionar las dependencias del proyecto.
 # Instrucciones
-1. Clona el repositorio:
+1. Dirigete a la carpeta "backend" del proyecto:
 2. Configura la base de datos:
   - Crea una base de datos llamada ecommerce.
   - Crea un usuario postgres con la contraseña admin y otórgale permisos sobre la base de datos ecommerce.
@@ -54,18 +54,18 @@ El contenedor de la base de datos cargará automáticamente el script init.sql, 
 3. Configura el archivo application.properties: Verifica que los detalles de la base de datos sean correctos en el archivo src/main/resources/application.properties:
 
 **properties**
-`
+```
 spring.datasource.url=jdbc:postgresql://localhost:5432/ecommerce
 spring.datasource.username=postgres
 spring.datasource.password=admin
 Compila el proyecto: Navega a la carpeta raíz del proyecto y ejecuta:
-`
+```
 
 > ./mvnw clean package -DskipTests
 
 4. Ejecuta la aplicación: Después de compilar, puedes ejecutar la aplicación:
 > java -jar target/ecommerce-0.0.1-SNAPSHOT.jar
-> 
+
 5. Accede a la aplicación: La aplicación estará disponible en http://localhost:8080.
 
 ## Datos de Prueba
@@ -80,6 +80,12 @@ Compila el proyecto: Navega a la carpeta raíz del proyecto y ejecuta:
 **Usuario VIP**:
 - username: Vip
 - password: vip
+---
+## Guía para correr la Aplicación Frontend
+1. Dirigete a la carpeta "frontend" del proyecto.
+2. Ejecuta el comando `npm install` para descargar las dependencias del proyecto.
+3. Configura la variable de entorno para acceder al backend: `VITE_BACKEND_URL=http://localhost:8080`
+4. Ejecuta el comando `npm run dev` para iniciar el proyecto en http://localhost:5173/
 
 ## Fases en el desarrollo de la aplicación
 ## 1. Análisis
