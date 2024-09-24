@@ -1,5 +1,7 @@
 # Examen Técnico
 
+Link al frontend: https://github.com/tobieche110/ecommerce-frontend
+
 ## Descripción
 
 Este proyecto es un ecommerce que permite a los usuarios agregar productos al carrito, consultar órdenes pagadas, gestionar productos (para administradores), entre otras funcionalidades. La aplicación está construida utilizando **Spring Boot** en el backend y **PostgreSQL** como base de datos.
