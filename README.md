@@ -124,6 +124,10 @@ El diagrama de flujo del cliente puede encontrarse en el archivo `Examen Tecnico
 - **Frontend**: React JS.
 - **Backend**: Java Spring Boot con Maven.
 
+### Diagrama de Flujo Principal
+El diagrama es meramente orientativo y no representa completamente el resultado final.
+https://drive.google.com/file/d/134ybadiw7G0IcihVqErsjx7q9CXPcrQB/view?usp=sharing
+
 ### Directorios Web
 - **Formulario de Log In**: Usuario y contraseña, con un botón para registrar.
 - **Formulario de Registro**: Correo, contraseña, confirmar contraseña.
